@@ -1,0 +1,686 @@
+/* 📱 تحسينات التجاوب للهواتف - موقع بلال المخلافي */
+@media (max-width: 768px) {
+    /* 🔧 إصلاح الأساسيات */
+    html {
+        font-size: 18px !important; /* تكبير الخط الأساسي */
+        -webkit-text-size-adjust: 100%; /* منع التكبير التلقائي في iOS */
+    }
+    
+    body {
+        font-size: 1.1rem !important;
+        line-height: 1.8;
+        text-size-adjust: 100%;
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* 🎯 إصلاح الحاوية */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* 🔝 شريط الطوارئ */
+    .emergency-bar {
+        padding: 12px 0 !important;
+    }
+    
+    .emergency-bar .container {
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: center !important;
+        padding: 0 15px !important;
+    }
+    
+    .emergency-alert,
+    .emergency-phone {
+        font-size: 1.1rem !important;
+        padding: 10px 15px !important;
+    }
+    
+    /* 🧭 الشريط العلوي - إصلاح كامل */
+    .header {
+        position: fixed !important;
+        top: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+    
+    .navbar {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 12px 0 !important;
+        width: 100% !important;
+    }
+    
+    .logo {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+    
+    .logo-img {
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.3rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .logo-text span {
+        font-size: 0.8rem !important;
+        white-space: nowrap !important;
+    }
+    
+    /* 🍔 قائمة الهاتف - إصلاح كامل */
+    .nav-menu {
+        position: fixed !important;
+        top: 80px !important;
+        right: -100% !important;
+        width: 85% !important;
+        height: calc(100vh - 80px) !important;
+        background: white !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 30px 25px !important;
+        margin: 0 !important;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.15) !important;
+        transition: all 0.4s ease !important;
+        z-index: 999 !important;
+        gap: 0 !important;
+    }
+    
+    .nav-menu.active {
+        right: 0 !important;
+    }
+    
+    .nav-menu li {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .nav-link {
+        display: block !important;
+        width: 100% !important;
+        padding: 18px 20px !important;
+        font-size: 1.2rem !important;
+        border-radius: 12px !important;
+        margin: 5px 0 !important;
+        text-align: right !important;
+        min-height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .nav-link.active {
+        background: rgba(52, 152, 219, 0.15) !important;
+        color: var(--secondary) !important;
+    }
+    
+    .menu-toggle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.6rem !important;
+        background: none !important;
+        border: 2px solid var(--primary) !important;
+        border-radius: 10px !important;
+        color: var(--primary) !important;
+        z-index: 1001 !important;
+    }
+    
+    .nav-cta {
+        display: none !important;
+    }
+    
+    /* 🎭 قسم الهيرو - إصلاح كامل */
+    .hero {
+        padding: 140px 0 60px 0 !important;
+        min-height: 100vh !important;
+        text-align: center !important;
+    }
+    
+    .hero-content {
+        padding: 0 15px !important;
+        width: 100% !important;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .hero-description {
+        font-size: 1.2rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 2.5rem !important;
+        text-align: center !important;
+        padding: 0 10px !important;
+    }
+    
+    .hero-stats {
+        flex-direction: column !important;
+        gap: 25px !important;
+        margin: 2.5rem 0 !important;
+    }
+    
+    .stat {
+        padding: 0 20px !important;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem !important;
+    }
+    
+    .stat-label {
+        font-size: 1.1rem !important;
+    }
+    
+    .hero-buttons {
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto 2rem auto !important;
+    }
+    
+    .hero-buttons .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center !important;
+        font-size: 1.1rem !important;
+        padding: 18px 25px !important;
+        min-height: 60px !important;
+    }
+    
+    .working-status {
+        text-align: center !important;
+        margin-top: 1rem !important;
+    }
+    
+    .status {
+        font-size: 1.1rem !important;
+        padding: 12px 25px !important;
+    }
+    
+    /* ⚡ الميزات */
+    .features {
+        padding: 60px 0 !important;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+        padding: 0 10px !important;
+    }
+    
+    .feature-card {
+        padding: 30px 25px !important;
+        margin: 0 !important;
+    }
+    
+    .feature-icon {
+        width: 70px !important;
+        height: 70px !important;
+        font-size: 1.8rem !important;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.4rem !important;
+    }
+    
+    .feature-card p {
+        font-size: 1.1rem !important;
+        line-height: 1.7 !important;
+    }
+    
+    /* 🛠️ الخدمات */
+    .services {
+        padding: 60px 0 !important;
+    }
+    
+    .section-title {
+        margin-bottom: 2.5rem !important;
+        padding: 0 15px !important;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .section-title p {
+        font-size: 1.1rem !important;
+        text-align: center !important;
+    }
+    
+    .service-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 0 10px !important;
+    }
+    
+    .service-card {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    .service-image {
+        height: 220px !important;
+    }
+    
+    .service-content {
+        padding: 25px !important;
+    }
+    
+    .service-content h3 {
+        font-size: 1.5rem !important;
+        text-align: right !important;
+    }
+    
+    .service-content p {
+        font-size: 1.1rem !important;
+        text-align: right !important;
+    }
+    
+    .service-content ul {
+        text-align: right !important;
+    }
+    
+    .service-content li {
+        font-size: 1.1rem !important;
+        padding: 12px 0 !important;
+        text-align: right !important;
+    }
+    
+    .service-content .btn {
+        font-size: 1.1rem !important;
+        padding: 16px 20px !important;
+        min-height: 55px !important;
+    }
+    
+    .services-cta {
+        padding: 40px 25px !important;
+        margin: 40px 15px 0 15px !important;
+        border-radius: 20px !important;
+    }
+    
+    .services-cta h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .services-cta p {
+        font-size: 1.1rem !important;
+    }
+    
+    /* 🎨 المعرض */
+    .gallery {
+        padding: 60px 0 !important;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 15px !important;
+    }
+    
+    .gallery-item {
+        height: 280px !important;
+        margin: 0 !important;
+    }
+    
+    .gallery-cta {
+        padding: 0 15px !important;
+    }
+    
+    .gallery-cta .btn {
+        width: 100% !important;
+        max-width: 300px !important;
+    }
+    
+    /* 👨‍💼 عني */
+    .about {
+        padding: 60px 0 !important;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        text-align: center !important;
+    }
+    
+    .about-content {
+        padding: 0 15px !important;
+    }
+    
+    .about-text p {
+        font-size: 1.1rem !important;
+        text-align: center !important;
+        line-height: 1.8 !important;
+    }
+    
+    .about-features {
+        text-align: right !important;
+        padding: 0 20px !important;
+    }
+    
+    .about-feature {
+        font-size: 1.1rem !important;
+        justify-content: flex-start !important;
+        padding: 12px 0 !important;
+    }
+    
+    .about-image {
+        padding: 0 20px !important;
+    }
+    
+    .about-image img {
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+    
+    .experience-badge {
+        width: 90px !important;
+        height: 90px !important;
+        bottom: -15px !important;
+        right: 50% !important;
+        transform: translateX(50%) !important;
+    }
+    
+    /* ❓ الأسئلة الشائعة */
+    .faq {
+        padding: 60px 0 !important;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 15px !important;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.2rem !important;
+        line-height: 1.5 !important;
+        padding: 20px 60px 20px 20px !important;
+    }
+    
+    .faq-answer p {
+        font-size: 1.1rem !important;
+        line-height: 1.7 !important;
+        padding: 0 20px 20px 20px !important;
+    }
+    
+    /* 📞 الاتصال */
+    .contact {
+        padding: 60px 0 !important;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        padding: 0 15px !important;
+    }
+    
+    .contact-method {
+        padding: 25px 20px !important;
+        text-align: center !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .contact-details {
+        text-align: center !important;
+    }
+    
+    .contact-form-container {
+        padding: 30px 25px !important;
+    }
+    
+    .form-group label {
+        font-size: 1.1rem !important;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1.1rem !important;
+        padding: 16px 15px !important;
+        min-height: 55px !important;
+    }
+    
+    .form-group textarea {
+        min-height: 120px !important;
+    }
+    
+    .submit-btn {
+        font-size: 1.1rem !important;
+        padding: 18px 20px !important;
+        min-height: 60px !important;
+    }
+    
+    /* 🗺️ الخريطة */
+    .map-section {
+        padding: 60px 0 !important;
+    }
+    
+    .map-container {
+        grid-template-columns: 1fr !important;
+        margin: 0 15px !important;
+    }
+    
+    .interactive-map {
+        height: 300px !important;
+    }
+    
+    .map-info {
+        padding: 25px !important;
+    }
+    
+    .areas-list li {
+        font-size: 1.1rem !important;
+        padding: 12px 0 !important;
+    }
+    
+    .delivery-indicators {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 15px !important;
+        margin-top: 2rem !important;
+    }
+    
+    .indicator {
+        padding: 20px !important;
+        text-align: center !important;
+    }
+    
+    /* 🔚 الفوتر */
+    .footer {
+        padding: 50px 0 20px 0 !important;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+    }
+    
+    .footer-logo h3 {
+        font-size: 1.6rem !important;
+    }
+    
+    .footer-links {
+        text-align: center !important;
+    }
+    
+    .footer-contact {
+        text-align: center !important;
+    }
+    
+    /* 📞 الأزرار العائمة */
+    .floating-contact {
+        bottom: 25px !important;
+        left: 25px !important;
+        gap: 12px !important;
+    }
+    
+    .floating-btn {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 1.3rem !important;
+    }
+    
+    .floating-call {
+        display: none !important; /* إخفاء زر الاتصال العائم على الهاتف */
+    }
+}
+
+/* 📱 تحسينات إضافية للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    html {
+        font-size: 16px !important;
+    }
+    
+    .container {
+        padding: 0 15px !important;
+    }
+    
+    .hero-title {
+        font-size: 1.9rem !important;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem !important;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .btn {
+        font-size: 1rem !important;
+        padding: 16px 20px !important;
+    }
+    
+    /* منع التكبير التلقائي في حقول الإدخال على iOS */
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    select,
+    textarea {
+        font-size: 16px !important;
+        transform: scale(1) !important;
+    }
+}
+
+/* 🎯 إصلاحات خاصة لمتصفحات الهواتف */
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+/* 🔧 تحسينات الأداء للهواتف */
+@media (max-width: 768px) {
+    /* تقليل الحركات للهواتف */
+    * {
+        transition-duration: 0.2s !important;
+    }
+    
+    /* تحسين عرض الصور */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* 📲 تحسينات اللمس */
+@media (max-width: 768px) {
+    /* جعل عناصر اللمس أكبر */
+    .btn, .nav-link, .faq-question, .contact-method {
+        min-height: 44px !important; /* الحجم الأدنى لللمس */
+        padding: 12px 16px !important;
+    }
+    
+    /* تحسين المسافات بين العناصر */
+    .hero-buttons .btn,
+    .features-grid .feature-card,
+    .service-grid .service-card {
+        margin-bottom: 15px !important;
+    }
+}
+
+/* 🛠️ إصلاح مشاكل iOS */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        -webkit-backdrop-filter: blur(10px) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+    
+    input, textarea {
+        font-size: 16px !important; /* منع التكبير في iOS */
+    }
+    
+    /* إصلاح شريط العناوين في iOS */
+    .header {
+        padding-top: env(safe-area-inset-top) !important;
+    }
+}
+
+/* 🌐 تحسينات لمتصفح سامسونج */
+@media (-webkit-touch-callout: none) and (max-width: 768px) {
+    .container {
+        padding: 0 20px !important;
+    }
+}
+
+/* 🚫 منع التمرير الأفقي */
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+}
+
+/* 🔧 إصلاحات عامة للهواتف */
+@media (max-width: 768px) {
+    /* إصلاح التخطيط العام */
+    .hero, .features, .services, .gallery, .about, .faq, .contact, .map-section {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    /* إصلاح النصوص */
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.8rem !important; }
+    h3 { font-size: 1.5rem !important; }
+    h4 { font-size: 1.3rem !important; }
+    p, li, span, a { 
+        font-size: 1.1rem !important; 
+        line-height: 1.7 !important;
+    }
+    
+    /* إصلاح الأزرار */
+    .btn {
+        min-height: 55px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 600 !important;
+    }
+}

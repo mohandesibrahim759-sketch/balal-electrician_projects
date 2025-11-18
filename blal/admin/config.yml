@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/gallery"   
+public_folder: "/images/gallery"
+
+collections:
+  - name: "gallery"
+    label: "معرض الأعمال"
+    folder: "images/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "اسم المشروع", name: "title", widget: "string" }
+      - { label: "الصورة", name: "image", widget: "image" }
+      - { label: "وصف المشروع", name: "description", widget: "text" }

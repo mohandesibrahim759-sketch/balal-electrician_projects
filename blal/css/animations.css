@@ -1,0 +1,308 @@
+/* 🎭 أنيميشنات متقدمة */
+
+/* أنيميشن الدخول */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* أنيميشنات الخروج */
+@keyframes slideOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+@keyframes slideOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+/* أنيميشنات خاصة */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateX(0%); }
+    15% { transform: translateX(-10%) rotate(-5deg); }
+    30% { transform: translateX(5%) rotate(3deg); }
+    45% { transform: translateX(-5%) rotate(-3deg); }
+    60% { transform: translateX(3%) rotate(2deg); }
+    75% { transform: translateX(-2%) rotate(-1deg); }
+}
+
+@keyframes tada {
+    0% { transform: scale(1); }
+    10%, 20% { transform: scale(0.9) rotate(-3deg); }
+    30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+    40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+/* تطبيق الأنيميشنات */
+.animate-in {
+    animation: fadeInUp 0.8s ease both;
+}
+
+.animate-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-3 {
+    animation-delay: 0.3s;
+}
+
+.animate-delay-4 {
+    animation-delay: 0.4s;
+}
+
+.animate-delay-5 {
+    animation-delay: 0.5s;
+}
+
+/* أنيميشنات التفاعل */
+.btn:hover {
+    animation: pulse 0.5s ease;
+}
+
+.service-card:hover {
+    animation: wobble 0.5s ease;
+}
+
+.floating-btn:hover {
+    animation: tada 0.5s ease;
+}
+
+/* أنيميشنات الحقول */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    animation: pulse 0.3s ease;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    animation: shake 0.5s ease;
+    border-color: #e74c3c !important;
+}
+
+/* أنيميشنات الإشعارات */
+.notification {
+    animation: slideInRight 0.3s ease;
+}
+
+.notification.hiding {
+    animation: slideInRight 0.3s ease reverse;
+}
+
+/* أنيميشنات التحميل */
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* أنيميشنات الصفحة */
+.page-enter {
+    animation: slideInRight 0.5s ease;
+}
+
+.page-exit {
+    animation: slideOutLeft 0.5s ease;
+}
+
+/* أنيميشنات القائمة */
+.nav-menu.active {
+    animation: slideInLeft 0.3s ease;
+}
+
+/* أنيميشنات خاصة بالموقع الكهربائي */
+.electric-spark {
+    position: relative;
+    overflow: hidden;
+}
+
+.electric-spark::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+    animation: electricFlow 3s linear infinite;
+}
+
+@keyframes electricFlow {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* أنيميشنات الاستجابة لللمس */
+@media (hover: hover) {
+    .service-card:hover .service-image {
+        animation: zoomIn 0.5s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+        animation: slideInUp 0.3s ease;
+    }
+}
+
+/* أنيميشنات الأداء */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* 🎭 أنيميشنات متجاوبة */
+
+/* أنيميشنات الدخول المتجاوبة */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تقليل الحركة للأجهزة التي تفضل الحركة المحدودة */
+@media (prefers-reduced-motion: reduce) {
+    .animate-in {
+        animation: none !important;
+    }
+    
+    .hero-scroll {
+        animation: none !important;
+    }
+    
+    .floating-btn::after {
+        animation: none !important;
+    }
+}
+
+/* تحسينات الأنيميشن للشاشات الصغيرة */
+@media (max-width: 767px) {
+    .feature-card:hover,
+    .service-card:hover,
+    .gallery-item:hover {
+        transform: none !important;
+    }
+    
+    /* تقليل تأثيرات Hover على الأجهزة التي لا تدعمها */
+    @media (hover: none) {
+        .feature-card:hover,
+        .service-card:hover {
+            transform: none;
+        }
+        
+        .nav-link:hover {
+            background: transparent;
+            transform: none;
+        }
+    }
+}
+
+/* أنيميشنات سلسة للشاشات الكبيرة */
+@media (min-width: 1024px) {
+    .feature-card,
+    .service-card,
+    .gallery-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+}
