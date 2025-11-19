@@ -1,816 +1,0 @@
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الأعمال - بلال المخلافي | كهربائي منازل الرياض</title>
-    <meta name="description" content="شاهد أعمالي السابقة في إصلاح وتركيب الكهرباء المنزلية - جودة واحترافية في العمل">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-</head>
-<body>
-    <!-- 🔝 الشريط العلوي -->
-    <header class="header">
-        <nav class="navbar container">
-            <div class="logo">
-                
-                  <div class="logo">
-                <img src="images/1.png" alt="بلال المخلافي - كهربائي منازل محترف" class="logo-img">
-                <div class="logo-text">
-                    <h1>بلال المخلافي</h1>
-                    <span>كهربائي منازل محترف - مقاول معتمد في الرياض</span>
-                </div>
-            </div>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">الرئيسية</a></li>
-                <li><a href="services.html" class="nav-link">الخدمات</a></li>
-                <li><a href="gallery.html" class="nav-link active">أعمالي</a></li>
-                <li><a href="contact.html" class="nav-link">اتصل بي</a></li>
-            </ul>
-            
-            <div class="nav-cta">
-                <a href="tel:0546788947" class="btn btn-sm btn-primary">
-                    <i class="fas fa-phone"></i>
-                    اتصل الآن
-                </a>
-            </div>
-            
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
-
-    <!-- 🎨 معرض الأعمال -->
-    <section class="gallery-page" style="padding: 120px 0 80px;">
-        <div class="container">
-            <div class="section-title">
-                <h2>معرض أعمالي</h2>
-                <p>أعمالي السابقة تتحدث عن جودة و احترافية خدماتي</p>
-            </div>
-
-            <!-- أزرار التصفية -->
-            <div class="gallery-filters" style="text-align: center; margin-bottom: 3rem;">
-                <button class="btn btn-sm filter-btn active" data-filter="all">الكل</button>
-                <button class="btn btn-sm filter-btn" data-filter="installation">التركيبات</button>
-                <button class="btn btn-sm filter-btn" data-filter="repair">الإصلاحات</button>
-                <button class="btn btn-sm filter-btn" data-filter="extension">التمديدات</button>
-            </div>
-            
-            <div class="gallery-grid" id="mainGallery">
-                <!-- سيتم تعبئته تلقائياً من النظام -->
-            </div>
-            
-            <!-- تحميل المزيد -->
-            <div class="gallery-load-more" style="text-align: center; margin-top: 3rem;">
-                <button class="btn btn-outline" id="loadMore">
-                    <i class="fas fa-plus"></i>
-                    تحميل المزيد
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم إدارة الأعمال (ظاهر لبلال فقط بعد تسجيل الدخول) -->
-    <section class="admin-works" id="adminWorks">
-        <div class="container">
-            <div class="section-title">
-                <h2><i class="fas fa-tools"></i> إدارة أعمالي</h2>
-                <p>من هنا تضيف وتتحكم في صور أعمالك</p>
-            </div>
-
-            <!-- نموذج إضافة عمل جديد -->
-            <div class="admin-form-container">
-                <form id="addWorkForm" class="admin-form">
-                    <div class="form-header">
-                        <h4><i class="fas fa-plus-circle"></i> إضافة عمل جديد</h4>
-                        <button type="button" id="logoutBtn" class="btn btn-sm" style="background: #e74c3c; color: white;">
-                            <i class="fas fa-sign-out-alt"></i> خروج
-                        </button>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="workTitle">عنوان العمل *</label>
-                            <input type="text" id="workTitle" name="workTitle" required 
-                                   placeholder="مثال: تركيب إنارة حديثة في صالة">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="workLocation">الموقع *</label>
-                            <input type="text" id="workLocation" name="workLocation" required 
-                                   placeholder="مثال: فيلا - حي النخيل">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="workCategory">نوع العمل *</label>
-                            <select id="workCategory" name="workCategory" required>
-                                <option value="">اختر التصنيف</option>
-                                <option value="installation">تركيب إنارة</option>
-                                <option value="repair">إصلاح أعطال</option>
-                                <option value="extension">تمديدات جديدة</option>
-                                <option value="maintenance">صيانة</option>
-                                <option value="smart">أنظمة ذكية</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="workDate">تاريخ العمل *</label>
-                            <input type="date" id="workDate" name="workDate" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="workDescription">شرح مفصل عن العمل *</label>
-                        <textarea id="workDescription" name="workDescription" rows="4" required
-                                  placeholder="اكتب شرح مفصل عن العمل المنجز، التحديات، والحلول..."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="workFeatures">المميزات (اختياري)</label>
-                        <div class="features-input">
-                            <input type="text" id="featureInput" placeholder="أضف مميزة مثل: تركيب لمبات LED">
-                            <button type="button" id="addFeatureBtn" class="btn btn-sm">
-                                <i class="fas fa-plus"></i> إضافة
-                            </button>
-                        </div>
-                        <div id="featuresList" class="features-list"></div>
-                    </div>
-
-                    <!-- رفع الصور -->
-                    <div class="form-group">
-                        <label>صور العمل *</label>
-                        <div class="upload-section">
-                            <div class="upload-areas">
-                                <!-- صورة رئيسية -->
-                                <div class="upload-area main-image">
-                                    <i class="fas fa-star"></i>
-                                    <p>الصورة الرئيسية</p>
-                                    <input type="file" class="image-input" data-type="main" accept="image/*">
-                                    <div class="preview-container"></div>
-                                </div>
-
-                                <!-- صور إضافية -->
-                                <div class="upload-area additional-images">
-                                    <i class="fas fa-images"></i>
-                                    <p>صور إضافية (اختياري)</p>
-                                    <input type="file" class="image-input" multiple data-type="additional" accept="image/*">
-                                    <div class="preview-container"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-save"></i>
-                            حفظ العمل
-                        </button>
-                        <button type="reset" class="btn btn-outline">جديد</button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- قائمة الأعمال المضافة -->
-            <div class="works-list-section">
-                <h4><i class="fas fa-list"></i> أعمالي المضافة</h4>
-                <div id="worksList" class="works-list">
-                    <!-- سيتم تعبئتها بالJavaScript -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 📞 قسم الاتصال السريع -->
-    <section class="quick-contact" style="background: #2c3e50; color: white; padding: 60px 0; text-align: center;">
-        <div class="container">
-            <h3 style="margin-bottom: 1rem;">هل تحتاج إلى خدمة كهربائية؟</h3>
-            <p style="margin-bottom: 2rem; opacity: 0.8;">لا تتردد في الاتصال بي للحصول على استشارة مجانية</p>
-            <div class="quick-contact-buttons">
-                <a href="tel:0546788947" class="btn btn-primary btn-lg">
-                    <i class="fas fa-phone"></i>
-                    اتصل فوراً
-                </a>
-                <a href="contact.html" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
-                    <i class="fas fa-envelope"></i>
-                    ارسل رسالة
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🔚 الفوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <h3>بلال المخلافي</h3>
-                        <span>كهربائي منازل محترف - الرياض</span>
-                    </div>
-                    <p class="footer-description">
-                        أقدم خدمات كهربائية متكاملة بجودة عالية وأسعار مناسبة. 
-                        خدمة عملاء مميزة وضمان على جميع الأعمال.
-                    </p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>روابط سريعة</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="services.html">الخدمات</a></li>
-                        <li><a href="gallery.html">أعمالي</a></li>
-                        <li><a href="contact.html">اتصل بي</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>خدماتي</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">إصلاح الأعطال</a></li>
-                        <li><a href="#">تركيب إنارة</a></li>
-                        <li><a href="#">تمديدات جديدة</a></li>
-                        <li><a href="#">صيانة دورية</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>تواصل معي</h4>
-                    <div class="footer-contact">
-                        <a href="tel:0546788947" class="contact-link">
-                            <i class="fas fa-phone"></i>
-                            0546788947
-                        </a>
-                        <a href="https://wa.me/96654788947" class="contact-link">
-                            <i class="fab fa-whatsapp"></i>
-                            واتساب
-                        </a>
-                        <span class="contact-link">
-                            <i class="fas fa-map-marker-alt"></i>
-                            الرياض - جميع الأحياء
-                        </span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 بلال المخلافي - كهربائي منازل - جميع الحقوق محفوظة</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 🔐 الزر السري لإدخال كلمة المرور -->
-    <button class="secret-admin-btn" id="secretAdminBtn" title="لوحة التحكم">
-        <i class="fas fa-user-lock"></i>
-    </button>
-
-    <!-- نافذة إدخال كلمة المرور -->
-    <div class="login-modal" id="loginModal">
-        <div class="login-box">
-            <h3><i class="fas fa-lock"></i> دخول المدير</h3>
-            <input type="password" id="adminPassword" class="login-input" placeholder="أدخل كلمة المرور">
-            <div class="login-actions">
-                <button id="loginBtn" class="btn-login">
-                    <i class="fas fa-sign-in-alt"></i> دخول
-                </button>
-                <button id="cancelLogin" class="btn-cancel">
-                    <i class="fas fa-times"></i> إلغاء
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- زر التحكم في الإدارة (يظهر فقط بعد تسجيل الدخول) -->
-    <div class="admin-control">
-        <button id="toggleAdmin" class="btn btn-admin">
-            <i class="fas fa-cog"></i>
-            لوحة التحكم
-        </button>
-    </div>
-
-    <!-- 📞 شريط الاتصال العائم -->
-    <div class="floating-contact">
-        <a href="tel:0546788947" class="floating-btn floating-call">
-            <i class="fas fa-phone"></i>
-        </a>
-        <a href="https://wa.me/96654788947" class="floating-btn floating-whatsapp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <!-- ⚡ JavaScript -->
-    <script>
-        // نظام إدارة أعمال بلال مع حماية كاملة وزر سري
-        class AdminGallerySystem {
-            constructor() {
-                this.currentWorks = [];
-                this.selectedFeatures = [];
-                this.isLoggedIn = false;
-                this.adminPassword = "balal2024"; // كلمة السر - غيرها لشيء تذكره
-                
-                this.init();
-            }
-
-            init() {
-                this.loadWorks();
-                this.setupEventListeners();
-                this.renderMainGallery();
-                
-                // التحقق إذا كان مسجل دخول مسبقاً
-                this.checkExistingLogin();
-            }
-
-            setupEventListeners() {
-                // الزر السري لإظهار نافذة التسجيل
-                document.getElementById('secretAdminBtn').addEventListener('click', () => {
-                    this.showLoginModal();
-                });
-
-                // زر تسجيل الدخول
-                document.getElementById('loginBtn').addEventListener('click', () => {
-                    this.login();
-                });
-
-                // زر إلغاء التسجيل
-                document.getElementById('cancelLogin').addEventListener('click', () => {
-                    this.hideLoginModal();
-                });
-
-                // زر الخروج
-                document.getElementById('logoutBtn').addEventListener('click', () => {
-                    this.logout();
-                });
-
-                // زر التحكم في لوحة الإدارة
-                document.getElementById('toggleAdmin').addEventListener('click', () => {
-                    this.toggleAdminPanel();
-                });
-
-                // إضافة مميزات
-                document.getElementById('addFeatureBtn').addEventListener('click', () => {
-                    this.addFeature();
-                });
-
-                // رفع الصور
-                document.querySelectorAll('.image-input').forEach(input => {
-                    input.addEventListener('change', (e) => {
-                        this.handleImageUpload(e.target);
-                    });
-                });
-
-                // إرسال النموذج
-                document.getElementById('addWorkForm').addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    this.saveWork();
-                });
-
-                // فلترة المعرض
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        this.filterGallery(e.target);
-                    });
-                });
-
-                // تحميل المزيد
-                document.getElementById('loadMore').addEventListener('click', () => {
-                    this.loadMoreWorks();
-                });
-
-                // إدخال كلمة السر عند الضغط على Enter
-                document.getElementById('adminPassword').addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') {
-                        this.login();
-                    }
-                });
-
-                // إغلاق نافذة التسجيل عند النقر خارجها
-                document.getElementById('loginModal').addEventListener('click', (e) => {
-                    if (e.target.id === 'loginModal') {
-                        this.hideLoginModal();
-                    }
-                });
-            }
-
-            checkExistingLogin() {
-                const savedLogin = localStorage.getItem('balalAdminLoggedIn');
-                if (savedLogin === 'true') {
-                    this.isLoggedIn = true;
-                    this.showAdminPanel();
-                }
-            }
-
-            showLoginModal() {
-                document.getElementById('loginModal').classList.add('active');
-                document.getElementById('adminPassword').focus();
-            }
-
-            hideLoginModal() {
-                document.getElementById('loginModal').classList.remove('active');
-                document.getElementById('adminPassword').value = '';
-            }
-
-            login() {
-                const password = document.getElementById('adminPassword').value;
-                
-                if (password === this.adminPassword) {
-                    this.isLoggedIn = true;
-                    localStorage.setItem('balalAdminLoggedIn', 'true');
-                    this.showAdminPanel();
-                    this.hideLoginModal();
-                    this.showMessage('تم تسجيل الدخول بنجاح!', 'success');
-                } else {
-                    this.showMessage('كلمة المرور خاطئة!', 'error');
-                    document.getElementById('adminPassword').value = '';
-                    document.getElementById('adminPassword').focus();
-                }
-            }
-
-            logout() {
-                this.isLoggedIn = false;
-                localStorage.removeItem('balalAdminLoggedIn');
-                this.hideAdminPanel();
-                this.showMessage('تم تسجيل الخروج', 'success');
-            }
-
-            showAdminPanel() {
-                document.querySelector('.admin-control').style.display = 'block';
-            }
-
-            hideAdminPanel() {
-                document.querySelector('.admin-control').style.display = 'none';
-                document.getElementById('adminWorks').style.display = 'none';
-                document.getElementById('adminPassword').value = '';
-            }
-
-            toggleAdminPanel() {
-                const adminSection = document.getElementById('adminWorks');
-                const isVisible = adminSection.style.display !== 'none';
-                
-                adminSection.style.display = isVisible ? 'none' : 'block';
-                
-                // تحريك الصفحة للقسم
-                if (!isVisible) {
-                    adminSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-
-            addFeature() {
-                const featureInput = document.getElementById('featureInput');
-                const featureText = featureInput.value.trim();
-                
-                if (featureText && !this.selectedFeatures.includes(featureText)) {
-                    this.selectedFeatures.push(featureText);
-                    this.renderFeaturesList();
-                    featureInput.value = '';
-                }
-            }
-
-            removeFeature(index) {
-                this.selectedFeatures.splice(index, 1);
-                this.renderFeaturesList();
-            }
-
-            renderFeaturesList() {
-                const featuresList = document.getElementById('featuresList');
-                featuresList.innerHTML = this.selectedFeatures.map((feature, index) => `
-                    <div class="feature-tag">
-                        <span>${feature}</span>
-                        <button type="button" onclick="adminSystem.removeFeature(${index})">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                `).join('');
-            }
-
-            handleImageUpload(input) {
-                const files = Array.from(input.files);
-                const type = input.getAttribute('data-type');
-                const previewContainer = input.parentElement.querySelector('.preview-container');
-                
-                files.forEach(file => {
-                    if (this.validateImage(file)) {
-                        this.previewImage(file, previewContainer, type);
-                    }
-                });
-            }
-
-            validateImage(file) {
-                if (!file.type.startsWith('image/')) {
-                    this.showMessage('يرجى رفع ملفات صور فقط', 'error');
-                    return false;
-                }
-
-                if (file.size > 5 * 1024 * 1024) {
-                    this.showMessage('حجم الصورة كبير جداً (الحد الأقصى 5MB)', 'error');
-                    return false;
-                }
-
-                return true;
-            }
-
-            previewImage(file, container, type) {
-                const reader = new FileReader();
-                
-                reader.onload = (e) => {
-                    const previewItem = document.createElement('div');
-                    previewItem.className = `preview-item ${type}`;
-                    previewItem.innerHTML = `
-                        <img src="${e.target.result}" alt="معاينة">
-                        <button type="button" class="remove-preview">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    `;
-                    
-                    // إزالة المعاينات القديمة للصورة الرئيسية
-                    if (type === 'main') {
-                        container.innerHTML = '';
-                    }
-                    
-                    container.appendChild(previewItem);
-                    
-                    // إضافة حدث إزالة المعاينة
-                    previewItem.querySelector('.remove-preview').addEventListener('click', () => {
-                        previewItem.remove();
-                    });
-                };
-
-                reader.readAsDataURL(file);
-            }
-
-            saveWork() {
-                if (!this.isLoggedIn) {
-                    this.showMessage('يجب تسجيل الدخول أولاً', 'error');
-                    return;
-                }
-
-                const formData = new FormData(document.getElementById('addWorkForm'));
-                
-                const workData = {
-                    id: Date.now(),
-                    title: formData.get('workTitle'),
-                    location: formData.get('workLocation'),
-                    category: formData.get('workCategory'),
-                    date: formData.get('workDate'),
-                    description: formData.get('workDescription'),
-                    features: [...this.selectedFeatures],
-                    images: this.getPreviewImages(),
-                    createdAt: new Date().toISOString()
-                };
-
-                // التحقق من البيانات
-                if (!this.validateWorkData(workData)) {
-                    return;
-                }
-
-                this.currentWorks.unshift(workData);
-                this.saveToStorage();
-                this.renderWorksList();
-                this.renderMainGallery();
-                this.resetForm();
-                
-                this.showMessage('تم حفظ العمل بنجاح!', 'success');
-            }
-
-            validateWorkData(workData) {
-                if (!workData.title || !workData.location || !workData.category || !workData.date) {
-                    this.showMessage('يرجى ملء جميع الحقول الإلزامية', 'error');
-                    return false;
-                }
-
-                if (!workData.images.main) {
-                    this.showMessage('يرجى إضافة صورة رئيسية للعمل', 'error');
-                    return false;
-                }
-
-                return true;
-            }
-
-            getPreviewImages() {
-                const images = {
-                    main: '',
-                    additional: []
-                };
-
-                // الحصول على الصور من المعاينات
-                const mainPreview = document.querySelector('.main-image .preview-item img');
-                if (mainPreview) {
-                    images.main = mainPreview.src;
-                }
-
-                document.querySelectorAll('.additional-images .preview-item img').forEach(img => {
-                    images.additional.push(img.src);
-                });
-
-                return images;
-            }
-
-            saveToStorage() {
-                localStorage.setItem('balalWorks', JSON.stringify(this.currentWorks));
-            }
-
-            loadWorks() {
-                const savedWorks = localStorage.getItem('balalWorks');
-                this.currentWorks = savedWorks ? JSON.parse(savedWorks) : [];
-            }
-
-            renderWorksList() {
-                const worksList = document.getElementById('worksList');
-                
-                worksList.innerHTML = this.currentWorks.map(work => `
-                    <div class="work-item" data-id="${work.id}">
-                        <div class="work-item-header">
-                            <h5>${work.title}</h5>
-                            <div class="work-actions">
-                                <button class="btn-sm edit-work" onclick="adminSystem.editWork(${work.id})">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn-sm delete-work" onclick="adminSystem.deleteWork(${work.id})">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="work-item-details">
-                            <span class="work-location"><i class="fas fa-map-marker-alt"></i> ${work.location}</span>
-                            <span class="work-date"><i class="fas fa-calendar"></i> ${work.date}</span>
-                            <span class="work-category">${this.getCategoryName(work.category)}</span>
-                        </div>
-                        <div class="work-item-preview">
-                            ${work.images.main ? `<img src="${work.images.main}" alt="${work.title}">` : ''}
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            renderMainGallery() {
-                const mainGallery = document.getElementById('mainGallery');
-                if (!mainGallery) return;
-
-                // دمج الأعمال المحفوظة مع أمثلة افتراضية إذا لم يكن هناك أعمال
-                const worksToShow = this.currentWorks.length > 0 ? this.currentWorks : this.getDefaultWorks();
-                
-                mainGallery.innerHTML = worksToShow.map(work => `
-                    <div class="gallery-item" data-category="${work.category}">
-                        <div class="work-image">
-                            ${work.images.main ? 
-                                `<img src="${work.images.main}" alt="${work.title}" loading="lazy">` :
-                                `<div style="background:#3498db; height:100%; display:flex; align-items:center; justify-content:center; color:white;">
-                                    <i class="fas fa-bolt" style="font-size:3rem;"></i>
-                                </div>`
-                            }
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>${work.title}</h4>
-                            <p>${work.location}</p>
-                            <p class="work-description">${work.description}</p>
-                            ${work.features.length > 0 ? `
-                                <div class="work-features">
-                                    ${work.features.map(feature => `<span class="feature">${feature}</span>`).join('')}
-                                </div>
-                            ` : ''}
-                            <span class="gallery-date">${work.date}</span>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            getDefaultWorks() {
-                return [
-                    {
-                        id: 1,
-                        title: "تركيب إنارة حديثة",
-                        location: "منزل العميل أحمد - حي النخيل",
-                        category: "installation",
-                        date: "يناير 2024",
-                        description: "تركيب نظام إنارة متكامل باستخدام أحدث التقنيات",
-                        features: ["لمبات LED", "تحكم ذكي", "توفير الطاقة"],
-                        images: { main: "" }
-                    },
-                    {
-                        id: 2,
-                        title: "تمديدات كهربائية جديدة",
-                        location: "فيلا جديدة - حي العليا", 
-                        category: "extension",
-                        date: "ديسمبر 2024",
-                        description: "تنفيذ تمديدات كهربائية كاملة لفيلا جديدة",
-                        features: ["أسلاك معزولة", "قواطع أمان", "نظام أرضي"],
-                        images: { main: "" }
-                    }
-                ];
-            }
-
-            getCategoryName(category) {
-                const categories = {
-                    'installation': 'تركيب إنارة',
-                    'repair': 'إصلاح أعطال', 
-                    'extension': 'تمديدات جديدة',
-                    'maintenance': 'صيانة',
-                    'smart': 'أنظمة ذكية'
-                };
-                return categories[category] || category;
-            }
-
-            editWork(workId) {
-                if (!this.isLoggedIn) {
-                    this.showMessage('يجب تسجيل الدخول أولاً', 'error');
-                    return;
-                }
-
-                const work = this.currentWorks.find(w => w.id === workId);
-                if (work) {
-                    this.fillFormForEdit(work);
-                    this.toggleAdminPanel();
-                }
-            }
-
-            fillFormForEdit(work) {
-                document.getElementById('workTitle').value = work.title;
-                document.getElementById('workLocation').value = work.location;
-                document.getElementById('workCategory').value = work.category;
-                document.getElementById('workDate').value = work.date;
-                document.getElementById('workDescription').value = work.description;
-                
-                this.selectedFeatures = [...work.features];
-                this.renderFeaturesList();
-            }
-
-            deleteWork(workId) {
-                if (!this.isLoggedIn) {
-                    this.showMessage('يجب تسجيل الدخول أولاً', 'error');
-                    return;
-                }
-
-                if (confirm('هل أنت متأكد من حذف هذا العمل؟')) {
-                    this.currentWorks = this.currentWorks.filter(w => w.id !== workId);
-                    this.saveToStorage();
-                    this.renderWorksList();
-                    this.renderMainGallery();
-                    this.showMessage('تم حذف العمل بنجاح', 'success');
-                }
-            }
-
-            filterGallery(button) {
-                // إزالة النشط من جميع الأزرار
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                // إضافة النشط للزر المختار
-                button.classList.add('active');
-                
-                const filter = button.getAttribute('data-filter');
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            }
-
-            loadMoreWorks() {
-                // يمكن إضافة المزيد من الأعمال هنا
-                this.showMessage('سيتم تحميل المزيد من الأعمال قريباً', 'success');
-            }
-
-            resetForm() {
-                document.getElementById('addWorkForm').reset();
-                this.selectedFeatures = [];
-                this.renderFeaturesList();
-                document.querySelectorAll('.preview-container').forEach(container => {
-                    container.innerHTML = '';
-                });
-            }
-
-            showMessage(message, type) {
-                const messageDiv = document.createElement('div');
-                messageDiv.className = `admin-message ${type}`;
-                messageDiv.innerHTML = `
-                    <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}"></i>
-                    ${message}
-                `;
-                
-                document.querySelector('.admin-form-container').prepend(messageDiv);
-                
-                setTimeout(() => {
-                    messageDiv.remove();
-                }, 5000);
-            }
-        }
-
-        // تفعيل النظام
-        const adminSystem = new AdminGallerySystem();
-    </script>
-</body>
-</html>
